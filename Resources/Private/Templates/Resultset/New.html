@@ -1,0 +1,29 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+<h3><f:translate key="tx_pbtoto_resultset_new"/></h3>
+
+<f:if condition="{isCommunication}">
+	<f:render partial="Tipset/Communication"/>
+</f:if>
+
+
+<f:form method="post" action="create"  name="resultset" object="{resultset}" >
+<f:render partial="Resultset/FormFields" />
+
+<div class="button_line">	
+<f:form.submit class="toto_button" value="{f:translate(key:'tx_pbtoto_save')}" />
+
+	<div class="toto_button" >
+		<f:link.action action="list">
+			<f:translate key="tx_pbtoto_abbort"/>
+		</f:link.action>
+	</div>
+
+
+</f:form>
+
+
+</div>
+
+</f:section>

@@ -1,0 +1,30 @@
+<h3><f:translate key="tx_pbtoto_table"/></h3>
+
+<div class="totoShow">
+
+	<table>
+		<thead>
+			<tr>
+				<th><f:translate key="tx_pbtoto_range"/></th>
+				<th><f:translate key="tx_pbtoto_player"/></th>
+				<th><f:translate key="tx_pbtoto_tips"/></th>
+				<th><f:translate key="tx_pbtoto_points"/></th>
+		</tr>
+		</thead>		
+
+		<f:for each="{users}" as="user">
+	
+			<f:cycle values="{0: 'altrow', 1: ''}" as="trClass">
+				<tr class="{trClass}">
+			</f:cycle>	
+					<td><f:cycle values="{0:'1',1:'2',2:'3',3:'4',4:'5',5:'6',6:'7',7:'8',8:'9',9:'10',10:'11',11:'12',12:'13',13:'14',14:'15',15:'16'}" as="nr">{nr}</f:cycle></td>
+	
+					<td>{user.username}</td>
+					<td>{user.tips}</td>
+					<td>{user.points}</td>
+				</tr>		
+		</f:for>
+
+	</table>	
+	
+</div>

@@ -1,0 +1,61 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<f:form action="multiTipsetsUpdate" object="{multiTipsets}" name="multiTipsets">
+	<f:form.hidden name="resultset" value="{resultset.uid}"/>
+
+	<div id="toto_background">
+		<div id="toto_radio">
+				<f:for each="{multiTipsets.storage}" as="tipset" key="key">
+					<f:cycle values="{0: 'toto_input_column', 1: 'toto_input_column_step'}" as="divClass">
+					<div class="{divClass}">
+					</f:cycle>	
+						<f:for each="{tipset.tip}" as="singleTip">
+		  						<div class="toto_input_row">	
+								
+									<f:form.hidden name="tip[{singleTip.uid}][__identity]" value="{singleTip.uid}"/>					
+			
+									<f:if condition="{singleTip.trend}==1">
+										<f:then><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" checked="checked" value="1"/></f:then>
+										<f:else><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" value="1"/></f:else>
+									 </f:if>
+			
+									<f:if condition="{singleTip.trend}==0">
+										<f:then><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" checked="checked" value="0"/></f:then>
+										<f:else><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" value="0"/></f:else>
+									 </f:if>
+									 
+									<f:if condition="{singleTip.trend}==2">
+										<f:then><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" checked="checked" value="2"/></f:then>
+										<f:else><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" value="2"/></f:else>
+									 </f:if>					 
+								</div>	 
+								
+							</f:for>
+							
+							<div class="toto_row_buttom">
+								<pb:substring maxCharacters="4" text="{tipset.name}" behind="."/>
+								
+							</div>	
+						
+						</div>
+							
+				</f:for>
+		</div>
+	</div>
+	
+	<f:if condition="{multiTipsets.storage}">
+		
+		<div id="toto_buton_line_single_column">
+			<div class="toto_button">
+				<f:form.submit value="{f:translate(key:'tx_pbtoto_save')}"/>
+			</div>
+			<div class="toto_button">
+				<a href="javascript:window.print()">
+					<f:translate key='tx_pbtoto_print'/>
+				</a>
+			</div>	
+		</div>
+	
+	</f:if>
+	
+</f:form>

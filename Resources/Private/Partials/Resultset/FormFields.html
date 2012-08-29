@@ -1,0 +1,59 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<div class="totoShow">
+
+<table>
+	<tr class="altrow">
+		<th><label for="isFinished">	<f:translate key="tx_pbtoto_domain_model_resultset.is_finished" /></label></th>
+		<td><f:form.select property="isFinished" options="{0: 'neu', 1: 'beendet'}" /></td>
+	</tr>
+	<tr class="">
+		<th><label for="begin"><f:translate key="tx_pbtoto_domain_model_resultset.begin" /></label></th>
+		<td><f:form.textbox id="begin" property="begin" value='{pb:time(unixtime:"{resultset.begin}",long:"true")}' /></td>
+	</tr>
+	<tr class="altrow">
+		<th><label for="end"><f:translate key="tx_pbtoto_domain_model_resultset.end" /></label></th>
+		<td><f:form.textbox id="end" property="end" value='{pb:time(unixtime:"{resultset.end}",long:"true")}'/></td>
+	</tr>
+</table>
+
+</div>
+
+<div class="totoShow totoShowSecond">
+	
+<f:if condition="{resultset.result}">
+
+	<table summary="Wettrunde vom <pb:time unixtime="{resultset.begin}"/> - <pb:time unixtime="{resultset.end}"/>">
+		<thead>
+		<tr>
+			<th><f:translate key="tx_pbtoto_game_nr_short"/></th>
+			<th><f:translate key="tx_pbtoto_domain_model_result.name_team1"/></th>
+			<th><f:translate key="tx_pbtoto_domain_model_result.name_team2"/></th>
+			<th></th>
+		</tr>
+		</thead>		
+		
+		<tbody>
+		<f:for each="{resultset.result}" as="singleResult">
+		
+			<f:cycle values="{0: 'altrow', 1: ''}" as="trClass">
+				<tr class="{trClass}">
+			</f:cycle>	
+				<td class="textcenter"><f:cycle values="{0:'1',1:'2',2:'3',3:'4',4:'5',5:'6',6:'7',7:'8',8:'9',9:'10',10:'11',11:'12',12:'13',13:'14',14:'15',15:'16'}" as="nr">{nr}</f:cycle></td>
+				<td><img src="{singleResult.iconUrlTeam1}" class="iconTeam" alt=""/> {singleResult.nameTeam1}</td>
+				<td><img src="{singleResult.iconUrlTeam2}" class="iconTeam" alt=""/> {singleResult.nameTeam2}</td>
+				<td align="center" class="textcenter" style="text-align:center">
+					<div class="toto_button" >
+						<f:link.action  action="delete" controller="Result" arguments="{result : singleResult}"> 
+							<f:translate key="tx_pbtoto_delete"/>
+						</f:link.action>
+					</div>
+				</td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
+</f:if>
+
+
+</div>

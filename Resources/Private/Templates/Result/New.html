@@ -1,0 +1,78 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+<h1><f:translate key="tx_pbtoto_result_new"/></h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" />
+
+<f:if condition="{errors}">
+	<f:then></f:then>
+	<f:else>
+
+		<script type="text/javascript">
+		
+				function clearSelects(changedSelect){
+
+					var clearLeagueShortcuts = false;
+					var clearGroupOrders = false;
+					var clearMatches = false;
+					
+					var leagueShortcuts = document.getElementById("leagueShortcuts");
+					var groupOrders = document.getElementById("groupOrders");
+					var matches = document.getElementById("matches");
+		
+					if(changedSelect == "leagueSeasons") {clearLeagueShortcuts=true;clearMatches=true;clearGroupOrders=true}
+					if(changedSelect == "groupOrders") {clearMatches=true;}
+					if(changedSelect == "leagueShortcuts") {clearMatches=true;clearGroupOrders=true}
+		
+					
+					if(clearLeagueShortcuts)for(var i = 0; i < leagueShortcuts.options.length; i++) leagueShortcuts.options[i].selected = false;
+					if(clearGroupOrders)for(var i = 0; i < groupOrders.options.length; i++) groupOrders.options[i].selected = false;
+					if(clearMatches)for(var i = 0; i < matches.options.length; i++) matches.options[i].selected = false;
+					
+					document.forms.newResult.submit();
+				}
+		
+		
+		</script>
+		
+		<f:form method="post" action="create"  name="newResult" object="{newResult}">
+		
+			<div class="totoShow">
+			
+				<table>
+					<tr class="altrow">
+						<th><f:translate key="tx_pbtoto_year"/></th>
+						<td><f:form.select id="leagueSeasons" options="{leagueSeasons}" optionValueField="value" optionLabelField="text" property="leagueSeason" additionalAttributes="{onChange : 'clearSelects(\'leagueSeasons\')'}"/></td>
+					</tr>
+					<tr class="">
+						<th><f:translate key="tx_pbtoto_league"/></th>
+						<td><f:form.select id="leagueShortcuts" options="{leagueShortcuts}" optionLabelField="text" property="leagueShortcut" additionalAttributes="{onChange : 'clearSelects(\'leagueShortcuts\')'}"/></td>
+					</tr>
+					<tr class="altrow">
+						<th><f:translate key="tx_pbtoto_game_day"/></th>
+						<td><f:form.select id="groupOrders" options="{groupOrders}" optionLabelField="text" property="groupOrderID" additionalAttributes="{onChange : 'clearSelects(\'groupOrders\')'}"/></td>
+					</tr>
+					<tr class="">
+						<th><f:translate key="tx_pbtoto_game"/></th>
+						<td><f:form.select id="matches" options="{matches}" optionLabelField="text" property="matchID" additionalAttributes="{onChange : 'document.forms.newResult.submit()'}"/></td>
+					</tr>
+				</table>
+			
+				<f:form.hidden property="resultset"/>
+			
+			</div>
+		
+		</f:form>
+
+
+		
+	</f:else>
+</f:if>
+
+
+</f:section>
+
+

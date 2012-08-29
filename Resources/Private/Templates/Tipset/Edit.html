@@ -1,0 +1,23 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:if condition="{isCommunication}">
+	<f:render partial="Tipset/Communication"/>
+</f:if>
+
+<div id="toto_tipsets">
+	<f:render partial="Tipset/Edit" arguments="{resultset:resultset,tipset:tipset}" />
+</div>
+
+<div id="toto_results">
+	<f:render partial="Tipset/Results" arguments="{results:results,resultset:resultset,tipsets:tipsets}" />
+</div>
+
+<f:render partial="Tipset/Tip" arguments="{resultset:resultset,tipsets:tipsets,multiTipsets:multiTipsets}" />
+
+
+
+</f:section>

@@ -1,0 +1,56 @@
+plugin.tx_pbtoto {
+	view {
+		templateRootPath = {$plugin.tx_pbtoto.view.templateRootPath}
+		partialRootPath = {$plugin.tx_pbtoto.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_pbtoto.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_pbtoto.persistence.storagePid}
+	}
+}
+
+plugin.tx_pbtoto._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-pbtoto-pi1 table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-pbtoto-pi1 table th {
+		font-weight:bold;
+	}
+
+	.tx-pbtoto-pi1 table td {
+		vertical-align:top;
+	}
+)
+
+
+page.headerData.117 = TEXT
+page.headerData.117.value(
+	<script type="text/javascript" src="/fileadmin/global/public/javascript/jquery.js"></script>
+	<script src="/fileadmin/global/public/javascript/ui.datepicker.js"></script>
+	<script src="/fileadmin/global/public/javascript/ui.datepicker-de.js"></script>
+	<link rel="stylesheet"  href="/fileadmin/global/public/css/datepicker.css" type="text/css" />
+	<script>$(document).ready(	function(){$("#begin").datepicker();$('#begin').datepicker();$("#end").datepicker();$('#end').datepicker();});</script>
+)	
+
+				
+
+
+
+ # Module configuration
+module.tx_pbtoto {
+	persistence {
+		storagePid = {$plugin.tx_pbtoto.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_pbtoto.view.templateRootPath}
+		partialRootPath = {$module.tx_pbtoto.view.partialRootPath}
+		layoutRootPath = {$module.tx_pbtoto.view.layoutRootPath}
+	}
+}

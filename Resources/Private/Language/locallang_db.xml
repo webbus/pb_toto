@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'pb_toto'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_pbtoto_domain_model_resultset">Resultset</label>
+			<label index="tx_pbtoto_domain_model_resultset.is_finished">Status</label>
+			<label index="tx_pbtoto_domain_model_resultset.begin">Startdatum</label>
+			<label index="tx_pbtoto_domain_model_resultset.end">Enddatum</label>
+			<label index="tx_pbtoto_domain_model_resultset.result">Spiele</label>
+			
+		
+			
+			<label index="tx_pbtoto_domain_model_result">Spiele</label>
+			<label index="tx_pbtoto_domain_model_result.name_team1">Name Team1</label>
+			<label index="tx_pbtoto_domain_model_result.name_team2">Name Team2</label>
+			<label index="tx_pbtoto_domain_model_result.icon_url_team1">Icon Url Team1</label>
+			<label index="tx_pbtoto_domain_model_result.icon_url_team2">Icon Url Team2</label>
+			<label index="tx_pbtoto_domain_model_result.match_is_finished">Match Is Finished</label>
+			<label index="tx_pbtoto_domain_model_result.points_team1">Points Team1</label>
+			<label index="tx_pbtoto_domain_model_result.points_team2">Points Team2</label>
+			<label index="tx_pbtoto_domain_model_result.trend">Trend</label>
+			<label index="tx_pbtoto_domain_model_result.match_i_d">Match I D</label>
+			<label index="tx_pbtoto_domain_model_tipset">Tipset</label>
+			<label index="tx_pbtoto_domain_model_tipset.name">Name</label>
+			<label index="tx_pbtoto_domain_model_tipset.fe_user">Fe User</label>
+			<label index="tx_pbtoto_domain_model_tipset.resultset">Resultset</label>
+			<label index="tx_pbtoto_domain_model_tipset.tip">Tip</label>
+			<label index="tx_pbtoto_domain_model_tip">Tip</label>
+			<label index="tx_pbtoto_domain_model_tip.trend">Trend</label>
+			<label index="tx_pbtoto_domain_model_tip.fe_user">Fe User</label>
+			<label index="tx_pbtoto_domain_model_tip.result">Result</label>
+		</languageKey>
+	</data>
+</T3locallang>

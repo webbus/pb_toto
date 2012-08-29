@@ -1,0 +1,48 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<h3><f:translate key="tx_pbtoto_archive"/></h3>
+
+<f:if condition="{isCommunication}">
+	<f:render partial="Tipset/Communication"/>
+</f:if>
+
+<div class="totoList">
+	<table >
+		<thead>
+			<tr>
+				<th><f:translate key="tx_pbtoto_domain_model_resultset.begin"/></th>
+				<th><f:translate key="tx_pbtoto_domain_model_resultset.end"/></th>
+			</tr>
+		</thead>
+		<f:for each="{resultsets}" as="resultset">
+			<f:cycle values="{0: 'altrow', 1: ''}" as="trClass">
+				<tr class="{trClass}">
+			</f:cycle>	
+				<td><pb:time unixtime="{resultset.begin}"/></td>
+				<td><pb:time unixtime="{resultset.end}"/></td>
+				<td>
+					<f:if condition="{resultset.begin}>{now}"><f:if condition="{user}"><div class="toto_button_liste"><f:link.action action="list" pageUid="{tipPageId}" controller="Tipset" arguments="{resultset : resultset}"><f:translate key="tx_pbtoto_tip"/></f:link.action></div></f:if></f:if>
+					<f:if condition="{resultset.begin}<{now}"><div class="toto_button_liste"><f:link.action action="show" controller="Resultset" arguments="{resultset : resultset}"><f:translate key="tx_pbtoto_show"/></f:link.action></div></f:if>
+				</td>
+				<f:if condition="{isAdmin}">
+					<td><div class="toto_button_liste"><f:link.action action="edit" arguments="{resultset : resultset}"><f:translate key="tx_pbtoto_edit"/></f:link.action></div></td>
+					<td><div class="toto_button_liste"><f:link.action action="delete" arguments="{resultset : resultset}"><f:translate key="tx_pbtoto_delete"/></f:link.action></div></td>
+				</f:if>
+			</tr>
+		</f:for>
+	</table>
+
+</div>
+
+<f:if condition="{isAdmin}">
+	<div class="button_line">
+		<div class="toto_button">
+			<f:link.action action="new"><f:translate key="tx_pbtoto_new"/></f:link.action>
+		</div>
+	</div>
+</f:if>
+
+</f:section>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Toto extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_pbtoto_domain_model_resultset">Ergebniswette</label>
+			<label index="tx_pbtoto_domain_model_resultset.is_finished">Status</label>
+			<label index="tx_pbtoto_domain_model_resultset.begin">Startdatum</label>
+			<label index="tx_pbtoto_domain_model_resultset.end">Enddatum</label>
+			<label index="tx_pbtoto_domain_model_resultset.result">Spiele</label>
+			<label index="tx_pbtoto_domain_model_result">Spiele</label>
+			<label index="tx_pbtoto_domain_model_result.name_team1">Platzverein</label>
+			<label index="tx_pbtoto_domain_model_result.name_team2">Gastverein</label>
+			<label index="tx_pbtoto_domain_model_result.icon_url_team1"></label>
+			<label index="tx_pbtoto_domain_model_result.icon_url_team2"></label>
+			<label index="tx_pbtoto_domain_model_result.match_is_finished">Status</label>
+			<label index="tx_pbtoto_domain_model_result.points_team1"></label>
+			<label index="tx_pbtoto_domain_model_result.points_team2"></label>
+			<label index="tx_pbtoto_domain_model_result.trend"></label>
+			<label index="tx_pbtoto_domain_model_result.match_i_d"></label>
+			<label index="tx_pbtoto_domain_model_tipset"></label>
+			<label index="tx_pbtoto_domain_model_tipset.name"></label>
+			<label index="tx_pbtoto_domain_model_tipset.fe_user"></label>
+			<label index="tx_pbtoto_domain_model_tipset.resultset"></label>
+			<label index="tx_pbtoto_domain_model_tipset.tip"></label>
+			<label index="tx_pbtoto_domain_model_tip"></label>
+			<label index="tx_pbtoto_domain_model_tip.trend"></label>
+			<label index="tx_pbtoto_domain_model_tip.fe_user"></label>
+			<label index="tx_pbtoto_domain_model_tip.result"></label>
+			
+			<label index="tx_pbtoto_result_new">Neues Ergebnis</label>
+			<label index="tx_pbtoto_resultset_new">Neue Ergebniswette</label>
+			<label index="tx_pbtoto_resultset_edit">Ergebniswette bearbeiten</label>
+
+			<label index="tx_pbtoto_tipset_new">Neue Tippliste</label>
+			<label index="tx_pbtoto_tipset_edit">Tippliste bearbeiten</label>
+			<label index="tx_pbtoto_tipset_name">Name der Tippliste</label>
+			
+			<label index="tx_pbtoto_delete">Löschen</label>
+			<label index="tx_pbtoto_save">Speichern</label>
+			<label index="tx_pbtoto_abbort">Abbrechen</label>
+			<label index="tx_pbtoto_edit">Bearbeiten</label>
+			<label index="tx_pbtoto_print">Drucken</label>
+			<label index="tx_pbtoto_new">Neu</label>
+			<label index="tx_pbtoto_show">Ansehen</label>
+			<label index="tx_pbtoto_advice">Mitteilung</label>
+			<label index="tx_pbtoto_year">Jahr</label>
+			<label index="tx_pbtoto_range">Rang</label>
+			<label index="tx_pbtoto_tips">Tipps</label>
+			<label index="tx_pbtoto_table">Tipp-Tabelle</label>
+			<label index="tx_pbtoto_points">Punkte</label>
+			<label index="tx_pbtoto_archive">Archiv der Ergebniswetten</label>
+			<label index="tx_pbtoto_tip">Tippen</label>
+			<label index="tx_pbtoto_result">Ergebnis</label>
+			<label index="tx_pbtoto_player">Spieler</label>
+			<label index="tx_pbtoto_tiplist">Tippliste</label>
+			<label index="tx_pbtoto_tiplists">Tipplisten</label>
+			<label index="tx_pbtoto_tiplist_count_text">Sie haben</label>
+			<label index="tx_pbtoto_resultset_from">Wettrunde vom</label>
+			<label index="tx_pbtoto_trend">Trend</label>
+			<label index="tx_pbtoto_league">Liga</label>
+			<label index="tx_pbtoto_game_day">Spieltag</label>
+			<label index="tx_pbtoto_game">Spiel</label>
+			<label index="tx_pbtoto_game_nr_short">Spiel-Nr.</label>
+			<label index="tx_pbtoto_game_nr_shorter">Nr.</label>
+			
+			<label index="tx_pbtoto_message_no_internet">Es ist ein Fehler aufgetreten. Ein Verbindungsversuch zu OpenLigaDB ist fehlgeschlagen. Möglicherweise besteht keine Verbindung zum Internet.</label>
+			<label index="tx_pbtoto_message_no_login">Bitte melden Sie sich an.</label>
+			<label index="tx_pbtoto_message_no_rights">Sie haben nicht die notwendigen Rechte</label>
+			
+			<label index="tx_pbtoto_message_result_create">Ihr Ergebnis wurde erstellt.</label>
+			<label index="tx_pbtoto_message_result_delete">Ihr Ergebnis wurde entfernt.</label>
+
+			<label index="tx_pbtoto_message_resultset_create">Ihre Ergebniswette wurde erstellt.</label>
+			<label index="tx_pbtoto_message_resultset_delete">Ihre Ergebniswette wurde entfernt.</label>
+			<label index="tx_pbtoto_message_resultset_update">Ihre Ergebniswette wurde aktualisiert.</label>
+			<label index="tx_pbtoto_message_resultset_no_resultset">Es wurde keine Ergebniswette gefunden.</label>
+			
+			<label index="tx_pbtoto_message_tipset_no_tipset">Sie haben noch keine Tipplisten. In der Box links unter dem roten Tippschein finden Sie den Button "Neue Tippliste". </label>
+			<label index="tx_pbtoto_message_tipset_create">Ihre Tippliste wurde erstellt. Jede Tippliste entspricht einer Spalte im Tippschein.</label>
+			<label index="tx_pbtoto_message_tipset_delete">Ihre Tippliste wurde entfernt.</label>
+			<label index="tx_pbtoto_message_tipset_update">Ihre Tippliste(n) wurde(n) aktualisiert.</label>
+			
+			
+		</languageKey>
+	</data>
+</T3locallang>

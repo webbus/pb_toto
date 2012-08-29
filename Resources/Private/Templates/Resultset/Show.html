@@ -1,0 +1,102 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="main">
+
+<f:if condition="{isCommunication}">
+	<f:render partial="Tipset/Communication"/>
+</f:if>
+
+<f:render partial="Resultset/Properties" arguments="{resultset:resultset}" />
+
+<f:if condition="true">
+	<f:if condition="{user}">
+		<div class="button_line">
+			<div class="toto_button">
+				<f:link.action controller="Tipset" pageUid="{tipPageId}" action="list" arguments="{resultset:resultset}"><f:translate key="tx_pbtoto_tip"/></f:link.action>
+			</div>
+		</div>
+	</f:if>
+</f:if>
+
+<f:if condition="{user}">
+
+	<f:if condition="{tipsets}">
+		<f:if condition="{now} > {resultset.begin}">
+			<f:if condition="{resultset.isFinished}==0">
+				<div id="toto_aktuell">
+					&nbsp;
+				</div>
+			</f:if>
+		</f:if>
+	
+		<div class="totoShow totoShowMarginTop">
+	
+			<table>
+				<thead>
+					<tr>
+						<th><f:translate key="tx_pbtoto_player"/></th>
+						<th><f:translate key="tx_pbtoto_tiplist"/></th>
+						<th class="totoNr">1&nbsp;</th>
+						<th class="totoNr">2&nbsp;</th>
+						<th class="totoNr">3&nbsp;</th>
+						<th class="totoNr">4&nbsp;</th>
+						<th class="totoNr">5&nbsp;</th>
+						<th class="totoNr">6&nbsp;</th>
+						<th class="totoNr">7&nbsp;</th>
+						<th class="totoNr">8&nbsp;</th>
+						<th class="totoNr">9&nbsp;</th>
+						<th class="totoNr">10</th>
+						<th class="totoNr">11</th>
+						<th class="totoNr">12</th>
+						<th class="totoNr">13</th>
+						<th class="totoNr"><f:translate key="tx_pbtoto_result"/></th>
+					</tr>
+				</thead>		
+				<tbody>
+			
+				<pb:counter name="finisheds"  modus="set" value="0"/>
+				<pb:counter name="rights"  modus="set" value="0"/>
+				<f:for each="{tipsets}" as="tipset">
+					
+					<f:cycle values="{0: 'altrow', 1: ''}" as="trClass">
+						<tr class="{trClass}">
+					</f:cycle>	
+					<td><pb:array array="{userArray}" id="{tipset.feUser}" id2="username"/></td>
+					<td>{tipset.name}</td>
+					
+					<f:for each="{tipset.tip}" as="singleTip">
+	
+						<td class="totoNr
+							<f:if condition="{singleTip.result.matchIsFinished}==1">
+								<pb:counter name="finisheds"  modus="increment"/>
+								<f:if condition="{singleTip.trend}=={singleTip.result.trend}">
+									<f:then> green <pb:counter name="rights" modus="increment"/></f:then>
+									<f:else> red </f:else>
+								</f:if>	
+							</f:if>">			
+							{singleTip.trend}
+						</td>
+						
+					</f:for>
+					
+					<f:if condition="{tipset.tip}">
+						<td class="totoNr">
+							<pb:counter name="rights" modus="get"/>/<pb:counter name="finisheds"  modus="get"/>
+						</td>
+						<pb:counter name="finisheds"  modus="set" value="0"/>
+						<pb:counter name="rights"  modus="set" value="0"/>
+					</f:if>
+					</tr>
+				</f:for>
+			
+				</tbody>
+	
+			</table>
+		</div>			
+	
+	</f:if>
+	
+</f:if>
+
+</f:section>

@@ -1,0 +1,30 @@
+plugin.tx_pbtoto {
+	view {
+		# cat=plugin.tx_pbtoto/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:pb_toto/Resources/Private/Templates/
+		# cat=plugin.tx_pbtoto/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:pb_toto/Resources/Private/Partials/
+		# cat=plugin.tx_pbtoto/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:pb_toto/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_pbtoto//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+}
+
+
+module.tx_pbtoto {
+	view {
+		# cat=plugin.tx_pbtoto/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:pb_toto/Resources/Private/Backend/Templates/
+		# cat=plugin.tx_pbtoto/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:pb_toto/Resources/Private/Backend/Partials/
+		# cat=plugin.tx_pbtoto/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:pb_toto/Resources/Private/Backend/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_pbtoto//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+}

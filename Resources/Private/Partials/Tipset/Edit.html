@@ -1,0 +1,26 @@
+<div class="default_box box">
+	<div class="box_content">
+
+		<h3><f:translate key="tx_pbtoto_tipset_edit"/></h3>
+		
+		<f:form method="post" action="update" name="tipset" object="{tipset}" >
+		
+		<f:render partial="Tipset/FormFields" arguments="{tipset:tipset,resultset:resultset}" />
+		
+		<div class="button_line">
+			<div class="toto_button">
+				<f:form.submit value="{f:translate(key:'tx_pbtoto_save')}" />
+			</div>
+			<div class="toto_button">
+				<f:link.action action="list" arguments="{resultset:resultset}">
+					<f:translate key="tx_pbtoto_abbort"/>
+				</f:link.action>
+			</div>
+		</div>	
+		
+		</f:form>
+		
+	</div>
+</div>
+
+		

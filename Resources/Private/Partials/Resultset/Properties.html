@@ -1,0 +1,50 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<div class="totoShow">
+
+	<h3><f:translate key="tx_pbtoto_resultset_from"/> <pb:time unixtime="{resultset.begin}"/> - <pb:time unixtime="{resultset.end}"/></h3>
+	
+	<f:if condition="{resultset.result}">
+	
+		<table summary="Wettrunde vom <pb:time unixtime="{resultset.begin}"/> - <pb:time unixtime="{resultset.end}"/>">
+		<thead>
+		<tr>
+		<th><f:translate key="tx_pbtoto_game_nr_short"/></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.name_team1"/></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.name_team2"/></th>
+		<th class="textcenter"><f:translate key="tx_pbtoto_result"/></th>
+		<th class="textcenter"><f:translate key="tx_pbtoto_trend"/></th>
+		</tr>
+		</thead>		
+		
+		<tbody>
+		<f:for each="{resultset.result}" as="result">
+		
+			<f:cycle values="{0: 'altrow', 1: ''}" as="trClass">
+				<tr class="{trClass}">
+			</f:cycle>	
+				<td class="textcenter"><f:cycle values="{0:'1',1:'2',2:'3',3:'4',4:'5',5:'6',6:'7',7:'8',8:'9',9:'10',10:'11',11:'12',12:'13',13:'14',14:'15',15:'16'}" as="nr">{nr}</f:cycle></td>
+				<td><img src="{result.iconUrlTeam1}" class="iconTeam" alt=""/> {result.nameTeam1}</td>
+				<td><img src="{result.iconUrlTeam2}" class="iconTeam" alt=""/> {result.nameTeam2}</td>
+				<td class="textcenter">
+					<f:if condition="{result.matchIsFinished}">
+						<f:then>{result.pointsTeam1}:{result.pointsTeam2}</f:then>
+						<f:else>-:-</f:else>
+					</f:if>&nbsp;
+	 			</td>
+				<td class="textcenter totogewinnzahl">
+					<f:if condition="{result.matchIsFinished}">
+						<f:then>{result.trend}</f:then>
+						<f:else>-</f:else>
+					</f:if>
+				</td>
+			</tr>
+		</f:for>
+		</tbody>
+		
+		</table>
+	
+	</f:if>
+
+</div>			
+	

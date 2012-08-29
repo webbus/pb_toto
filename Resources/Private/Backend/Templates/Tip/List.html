@@ -1,0 +1,41 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings 
+in /Configuration/Kickstarter/settings.yaml:
+  Resources:
+    Private: 
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the kickstarter
+
+<f:section name="content">
+<h1>Listing for Tip</h1>
+
+<f:flashMessages />
+
+<table  class="tx_pbtoto" >
+	<tr>
+		<th><f:translate key="tx_pbtoto_domain_model_tip.trend" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_tip.fe_user" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_tip.result" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{tips}" as="tip">
+		<tr>
+			<td><f:link.action action="show" arguments="{tip : tip}"> {tip.trend}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tip : tip}"> {tip.feUser}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{tip : tip}"> {tip.result}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{tip : tip}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{tip : tip}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Tip</f:link.action>
+</f:section>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_pbtoto_domain_model_tip</description>
+        <type>CSH</type>
+        <csh_table>tx_pbtoto_domain_model_tip</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+			<label index="trend.description">trend</label>
+			<label index="fe_user.description">feUser</label>
+			<label index="result.description">result</label>
+		</languageKey>
+    </data>
+</T3locallang>

@@ -1,0 +1,56 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+   		 <ROOT>
+ 	         <TCEforms>
+    	        <sheetTitle>Verhalten</sheetTitle>
+     		   </TCEforms>
+         	<type>array</type>
+         	<el>
+	            <switchableControllerActions>
+			         <TCEforms>
+			             <label>Standardaktion des Plugins</label>
+			             <config>
+			                <type>select</type>
+			                <items>
+			                  <numIndex index="0">
+					               <numIndex index="0">Auswahlwette aktuell</numIndex>
+					               <numIndex index="1">Resultset->showCurrent;Resultset->index;Tipset->list;Tipset->multiTipsetsList;Tipset->multiTipsetsUpdate;Tipset->new;Tipset->create;Tipset->edit;Tipset->update;Tipset->delete</numIndex>
+			                  </numIndex>
+			                  <numIndex index="1">
+					               <numIndex index="0">Vorschau diese Woche</numIndex>
+					               <numIndex index="1">Resultset->showPreviewFirst;Resultset->index;Tipset->list;Tipset->multiTipsetsList;Tipset->multiTipsetsUpdate;Tipset->new;Tipset->create;Tipset->edit;Tipset->update;Tipset->delete</numIndex>
+			                  </numIndex>
+			                  <numIndex index="2">
+					               <numIndex index="0">Vorschau naechste Woche</numIndex>
+					               <numIndex index="1">Resultset->showPreviewSecond;Resultset->index;Tipset->list;Tipset->multiTipsetsList;Tipset->multiTipsetsUpdate;Tipset->new;Tipset->create;Tipset->edit;Tipset->update;Tipset->delete</numIndex>
+			                  </numIndex>
+			                  <numIndex index="3">
+					               <numIndex index="0">Tip-Tabelle</numIndex>
+					               <numIndex index="1">Tipset->showTable;Resultset->index</numIndex>
+			                  </numIndex>
+			                  <numIndex index="4">
+					               <numIndex index="0">Archiv</numIndex>
+					               <numIndex index="1">Resultset->list;Resultset->new;Resultset->edit;Resultset->show;Resultset->index;Tipset->list;Tipset->multiTipsetsList;Tipset->multiTipsetsUpdate;Tipset->new;Tipset->create;Tipset->edit;Tipset->update;Tipset->delete</numIndex>
+			                  </numIndex>
+			                  <numIndex index="5">
+					               <numIndex index="0">Ergebniswette erstellen</numIndex>
+					               <numIndex index="1">Resultset->new;Resultset->delete;Resultset->create;Resultset->index</numIndex>
+			                  </numIndex>
+			                  <numIndex index="6">
+					               <numIndex index="0">Ergebniswetten bearbeiten</numIndex>
+					               <numIndex index="1">Resultset->list;Result->create;Result->delete;Result->new;Resultset->edit;Resultset->update;Resultset->index;Resultset->delete</numIndex>
+			                  </numIndex>
+			                  <numIndex index="7">
+					               <numIndex index="0">Tippen</numIndex>
+					               <numIndex index="1">Tipset->list;Tipset->multiTipsetsUpdate;Tipset->new;Tipset->create;Tipset->edit;Tipset->update;Resultset->index;Tipset->delete</numIndex>
+			                  </numIndex>
+			               </items>
+			             </config>
+			         </TCEforms>
+	            </switchableControllerActions>
+        		 </el>
+   		  </ROOT>
+        </sDEF>
+     </sheets>
+</T3DataStructure>

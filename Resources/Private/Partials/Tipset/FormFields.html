@@ -1,0 +1,25 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<h3><f:translate key="tx_pbtoto_resultset_from"/> <pb:time unixtime="{resultset.begin}"/> - <pb:time unixtime="{resultset.end}"/></h3>
+
+<div class="totoList totoShowMargin">
+	
+	<table>
+		
+		<tr class="altrow">
+			<th>
+				<label for="name">
+					<f:translate key="tx_pbtoto_tipset_name" />
+				</label>
+				
+			</th>
+			<td>
+				<f:form.textbox property="name" />
+			</td>
+		</tr>	
+		
+		<f:form.hidden property="resultset" />
+		
+	</table>
+
+</div>

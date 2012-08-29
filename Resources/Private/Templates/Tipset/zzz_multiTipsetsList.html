@@ -1,0 +1,97 @@
+{namespace pb=Tx_PbToto_ViewHelpers}
+
+<f:form action="multiTipsetsUpdate" object="{multiTipsets}" name="multiTipsets">
+<f:form.hidden name="resultset" value="{resultset}"/>
+
+
+
+
+<div id="toto_comunication"></div>
+
+<div id="toto_background">
+	<div id="toto_radio">
+			<f:for each="{multiTipsets.storage}" as="tipset" key="key">
+				<f:cycle values="{0: 'toto_input_column', 1: 'toto_input_column_step'}" as="divClass">
+				<div class="{divClass}">
+				</f:cycle>	
+					<f:for each="{tipset.tip}" as="singleTip">
+	  						<div class="toto_input_row">	
+							
+								<f:form.hidden name="tip[{singleTip.uid}][__identity]" value="{singleTip.uid}"/>					
+		
+								<f:if condition="{singleTip.trend}==1">
+									<f:then><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" checked="checked" value="1"/></f:then>
+									<f:else><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" value="1"/></f:else>
+								 </f:if>
+		
+								<f:if condition="{singleTip.trend}==0">
+									<f:then><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" checked="checked" value="0"/></f:then>
+									<f:else><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" value="0"/></f:else>
+								 </f:if>
+								 
+								<f:if condition="{singleTip.trend}==2">
+									<f:then><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" checked="checked" value="2"/></f:then>
+									<f:else><f:form.radio class="toto_input_radio" name="storage[{singleTip.uid}][trend]" value="2"/></f:else>
+								 </f:if>					 
+							</div>	 
+							
+						</f:for>
+					
+					</div>
+						
+			</f:for>
+	</div>
+</div>
+
+<div id="toto_buton_line_single_column">
+	<div id="toto_buton_line_single_column_content">
+			<div class="toto_button">
+				<f:form.submit value="Speichern"/>
+			</div>
+			<div class="toto_button">
+				<f:form.submit value="Abbrechen"/>
+			</div>	
+			<div class="toto_button">
+				<f:form.submit value="Drucken"/>
+			</div>	
+	</div>		
+</div>
+
+<div id="toto_tipsets">
+	<f:render partial="Tipset/List" arguments="{resultset:resultset,tipsets:tipsets}" />
+</div>
+
+
+<div id="toto_results">
+	<div class="toto_results">
+		<f:for each="{results}" as="result">
+				<div class="toto_input_row">
+					1. <img src="{result.iconUrlTeam1}" class="iconTeam" alt=""/> {result.nameTeam1} : <img class="iconTeam"  src="{result.iconUrlTeam2}" alt=""/> {result.nameTeam2}
+				</div>
+		</f:for>
+	</div>
+	
+</div>
+
+<!--div id="toto_input">
+</div-->
+	
+<!--div id="toto_results" style="display:block">
+	<div class="toto_results">
+		<f:for each="{results}" as="result">
+				<div class="toto_input_row">
+					<img src="{result.iconUrlTeam1}" class="iconTeam" alt=""/> {result.nameTeam1} : <img class="iconTeam"  src="{result.iconUrlTeam2}" alt=""/> {result.nameTeam2}
+				</div>
+		</f:for>
+	</div>
+</div-->
+
+<script type="text/javascript">
+	function changeResultsVisibility() {
+		if(document.getElementById("toto_results").style.display == "none")
+			document.getElementById("toto_results").style.display = "block";
+		else document.getElementById("toto_results").style.display = "none";	
+	}
+</script>
+
+</f:form>

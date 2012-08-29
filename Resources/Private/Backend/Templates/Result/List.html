@@ -1,0 +1,53 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings 
+in /Configuration/Kickstarter/settings.yaml:
+  Resources:
+    Private: 
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the kickstarter
+
+<f:section name="content">
+<h1>Listing for Result</h1>
+
+<f:flashMessages />
+
+<table  class="tx_pbtoto" >
+	<tr>
+		<th><f:translate key="tx_pbtoto_domain_model_result.name_team1" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.name_team2" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.icon_url_team1" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.icon_url_team2" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.match_is_finished" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.points_team1" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.points_team2" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.trend" /></th>
+		<th><f:translate key="tx_pbtoto_domain_model_result.match_i_d" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{results}" as="result">
+		<tr>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.nameTeam1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.nameTeam2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.iconUrlTeam1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.iconUrlTeam2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.matchIsFinished}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.pointsTeam1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.pointsTeam2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.trend}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{result : result}"> {result.matchID}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{result : result}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{result : result}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Result</f:link.action>
+</f:section>
